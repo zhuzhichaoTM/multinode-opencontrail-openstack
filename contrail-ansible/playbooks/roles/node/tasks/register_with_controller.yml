@@ -4,7 +4,7 @@
   register: curl_result
   until: curl_result.stdout == "200"
   delay: 1
-  retries: 180
+  retries: 100
 
 - name: "Register analytics node with controller"
   shell: "docker exec controller /usr/share/contrail-utils/provision_analytics_node.py \

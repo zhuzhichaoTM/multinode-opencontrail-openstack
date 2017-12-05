@@ -2,35 +2,37 @@
 # This repo will be used by other nodes on installing any packages in the node
 # setting up contrail-cni need this repo enabled
 # NOTE: Repo is required only for mesos and nested mode kubernetes
-;[contrail-repo]
-;192.168.0.24
+#;[contrail-repo]
+#;192.168.0.24
 
 [contrail-controllers]
-10.87.1.49
+192.168.29.53
 
 [contrail-analyticsdb]
-10.87.1.49
+192.168.29.53
 
 [contrail-analytics]
-10.87.1.49
+192.168.29.53
+
+[contrail-config]
+192.168.29.53
 
 [contrail-compute]
-10.87.1.49
-
+192.168.29.53 tsn_mode=True 
+192.168.29.129 tsn_mode=True
 ##
 # Only enable if you setup with openstack (when cloud_orchestrator is openstack)
 ##
 [openstack-controllers]
-10.87.1.49
+ 192.168.26.5
 
 # Kubernetes Nested Mode.
 # Underlay Contrail Api Server to which kubernetes instance should
 # connect to. This is to be set for ONLY for nested kubernetes installation.
-;[kubernetes-contrail-controllers]
-;192.168.0.24
+#;[kubernetes-contrail-controllers]
+#;192.168.0.24
 
 # Kubernetes Nested Mode.
 # Underlay Contrail Analytics Server to which kubernetes instance should
 # connect to. This is to be set for ONLY for nested kubernetes installation.
-;[kubernetes-contrail-analytics]
-;192.168.0.24
+#;[kubernetes-contrail-analytics]

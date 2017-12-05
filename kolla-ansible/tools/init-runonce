@@ -8,9 +8,9 @@
 IMAGE_URL=http://download.cirros-cloud.net/0.3.4/
 IMAGE=cirros-0.3.4-x86_64-disk.img
 IMAGE_NAME=cirros
-EXT_NET_CIDR='10.0.2.0/24'
-EXT_NET_RANGE='start=10.0.2.150,end=10.0.2.199'
-EXT_NET_GATEWAY='10.0.2.1'
+EXT_NET_CIDR='192.168.29.0/24'
+EXT_NET_RANGE='start=192.168.29.137,end=192.168.29.140'
+EXT_NET_GATEWAY='192.168.29.254'
 
 # Sanitize language settings to avoid commands bailing out
 # with "unsupported locale setting" errors.
@@ -39,10 +39,10 @@ if [[ "${OS_USERNAME}" == "" ]]; then
 fi
 
 # Test to ensure configure script is run only once
-if openstack image list | grep -q cirros; then
-    echo "This tool should only be run once per deployment."
-    exit
-fi
+#if openstack image list | grep -q cirros; then
+#    echo "This tool should only be run once per deployment."
+#    exit
+#fi
 
 echo Downloading glance image.
 if ! [ -f "${IMAGE}" ]; then

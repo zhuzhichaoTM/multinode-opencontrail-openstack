@@ -2,7 +2,7 @@
 # Docker configurations
 ##
 # docker registry
-docker_registry: "gokulpch"
+docker_registry: "192.168.26.100:4000"
 docker_registry_insecure: True
 
 # install docker from package rather than installer from get.docker.com which is default method
@@ -37,7 +37,7 @@ contrail_version: 4.0.1.0-12
 cloud_orchestrator: openstack
 
 # vrouter physical interface
-vrouter_physical_interface: ens3
+vrouter_physical_interface: eno1
 
 # custom image for kube-manager - image with ubuntu 16.04 and systemd
 # contrail_kube_manager_image: 10.84.34.155:5000/contrail-kube-manager-u16.04:4.0.0.0-3016
@@ -48,7 +48,7 @@ vrouter_physical_interface: ens3
 
 # controller_ip can be load ballanced IP, or one of the controller_list
 # if not configured, ansible use first ip address from [contrail-controllers]
-# controller_ip: 192.168.0.22
+# controller_ip: 192.168.26.51
 
 ##################
 # Below config params (i.e the variables named .*_config) are used to configure contrailctl
@@ -62,7 +62,7 @@ vrouter_physical_interface: ens3
 #   This vars will be configured in [GLOBAL] section of all contrailctl config files (contrailctl/*.conf)
 
 # global_config:
-global_config: { external_rabbitmq_servers: 10.87.1.49 }
+global_config: { external_rabbitmq_servers: 192.168.26.5 }
 rabbitmq_config: { user: openstack, password: contrail1 }
 
 # To configure custom webui http port
@@ -72,12 +72,12 @@ rabbitmq_config: { user: openstack, password: contrail1 }
 # Openstack specific configuration
 ##
 # contrail_install_packages_url: "http://10.84.5.120/github-build/mainline/3023/ubuntu-14-04/mitaka/contrail-install-packages_4.0.0.0-3023~mitaka_all.deb"
-keystone_config: {ip: 10.87.1.49, admin_password: contrail1, auth_protocol: http}
+keystone_config: {ip: 192.168.26.5, admin_password: contrail1, auth_protocol: http}
 
 # Link-Local Metadata Service
 # By default server manager will retrieve metadata_proxy_secret from openstack node
 # openstack nova.conf and contrail-vrouter-agent.conf will have same value for metadata_proxy_secret
-# neutron_config = { 'metadata_proxy_secret': 'contrail123', }
+# neutron_config = { 'metadata_proxy_secret': 'contrail1', }
 
 ###################################################
 # SSL Cert Configuration (Path to copy SSL certs to containers/bare metal)
