@@ -27,8 +27,8 @@ openstack_release: "4.0.0"
 # the hosts running keepalived for high-availability. When running an All-In-One
 # without haproxy and keepalived, this should be the first IP on your
 # 'network_interface' as set in the Networking section below.
-kolla_internal_vip_address: "192.168.26.5"
-enable_haproxy: "yes"
+kolla_internal_vip_address: "192.168.26.128"
+enable_haproxy: "no"
 
 # This is the DNS name that maps to the kolla_internal_vip_address VIP. By
 # default it is the same as kolla_internal_vip_address.
@@ -104,7 +104,7 @@ api_interface: "{{ network_interface }}"
 nova_compute_image_full: "192.168.26.100:4000/ubuntu-binary-nova-compute:4.0.1.0-12"
 neutron_server_image_full: "192.168.26.100:4000/ubuntu-binary-neutron-server:4.0.1.0-12"
 enable_neutron_opencontrail: "yes"
-contrail_api_interface_address: "192.168.29.53"
+contrail_api_interface_address: "192.168.26.128"
 
 
 ####################

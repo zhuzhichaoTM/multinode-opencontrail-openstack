@@ -6,25 +6,27 @@
 #;192.168.0.24
 
 [contrail-controllers]
-192.168.29.53
+192.168.26.128
 
 [contrail-analyticsdb]
-192.168.29.53
+192.168.26.128
 
 [contrail-analytics]
-192.168.29.53
+192.168.26.128
 
 [contrail-config]
-192.168.29.53
+192.168.26.128
 
 [contrail-compute]
+192.168.29.52 tsn_mode=True
 192.168.29.53 tsn_mode=True 
 192.168.29.129 tsn_mode=True
 ##
 # Only enable if you setup with openstack (when cloud_orchestrator is openstack)
 ##
 [openstack-controllers]
- 192.168.26.5
+192.168.26.128
+
 
 # Kubernetes Nested Mode.
 # Underlay Contrail Api Server to which kubernetes instance should

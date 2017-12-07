@@ -62,7 +62,7 @@ vrouter_physical_interface: eno1
 #   This vars will be configured in [GLOBAL] section of all contrailctl config files (contrailctl/*.conf)
 
 # global_config:
-global_config: { external_rabbitmq_servers: 192.168.26.5 }
+global_config: { external_rabbitmq_servers: 192.168.26.128 }
 rabbitmq_config: { user: openstack, password: contrail1 }
 
 # To configure custom webui http port
@@ -72,7 +72,7 @@ rabbitmq_config: { user: openstack, password: contrail1 }
 # Openstack specific configuration
 ##
 # contrail_install_packages_url: "http://10.84.5.120/github-build/mainline/3023/ubuntu-14-04/mitaka/contrail-install-packages_4.0.0.0-3023~mitaka_all.deb"
-keystone_config: {ip: 192.168.26.5, admin_password: contrail1, auth_protocol: http}
+keystone_config: {ip: 192.168.26.128, admin_password: contrail1, auth_protocol: http}
 
 # Link-Local Metadata Service
 # By default server manager will retrieve metadata_proxy_secret from openstack node
